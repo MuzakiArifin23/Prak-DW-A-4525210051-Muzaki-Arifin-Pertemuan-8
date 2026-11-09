@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi Event WebFest 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main class="container">
+        <section class="form-card">
+
+            <header class="form-header">
+                <img src="images/logo-event.svg" alt="Logo WebFest 2026" class="logo" width="56" height="56">
+                <span class="label-top">EVENT TEKNOLOGI</span>
+                <h1>Registrasi Workshop WebFest 2026</h1>
+                <p>
+                    Lengkapi data berikut untuk mendaftar sebagai peserta
+                    dan unggah dokumen yang diperlukan.
+                </p>
+                <p class="required-info">* Wajib diisi</p>
+            </header>
+
+            <!--
+                method POST + enctype multipart/form-data
+                dibutuhkan karena form mengirim file (upload).
+            -->
+            <form action="/proses-registrasi" method="post" enctype="multipart/form-data">
+
+                <!-- Nama (required, minlength, maxlength) -->
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap *</label>
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        minlength="3"
+                        maxlength="60"
+                        placeholder="Contoh: Muzaki Arifin"
+                        required>
+                    <small>Tuliskan 3-60 karakter.</small>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="nama@email.com"
+                        required>
+                    <small>Gunakan alamat email yang masih aktif.</small>
+                </div>
+
+                <!-- NIM (pattern) -->
+                <div class="form-group">
+                    <label for="nim">NIM *</label>
+                    <input
+                        type="text"
+                        id="nim"
+                        name="nim"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        placeholder="Contoh: 4525210051"
+                        title="NIM harus berupa 10 digit angka"
+                        required>
+                    <small>Harus tepat 10 digit angka.</small>
+                </div>
+
+                <!-- Nomor Telepon (pattern) -->
+                <div class="form-group">
+                    <label for="telepon">Nomor Telepon *</label>
+                    <input
+                        type="text"
+                        id="telepon"
+                        name="telepon"
+                        pattern="[0-9]{10,13}"
+                        minlength="10"
+                        maxlength="13"
+                        placeholder="Contoh: 081234567890"
+                        title="Nomor telepon berupa 10-13 digit angka tanpa spasi"
+                        required>
+                    <small>Masukkan 10-13 digit angka tanpa spasi.</small>
+                </div>
+
+                <!-- Select / Dropdown -->
+                <div class="form-group">
+                    <label for="program-studi">Program Studi *</label>
+                    <select id="program-studi" name="program_studi" required>
+                        <option value="">-- Pilih Program Studi --</option>
+                        <option value="informatika">Teknik Informatika</option>
+                        <option value="sistem-informasi">Sistem Informasi</option>
+                        <option value="mesin">Teknik Mesin</option>
+                        <option value="elektro">Teknik Elektro</option>
+                        <option value="sipil">Teknik Sipil</option>
+                    </select>
+                </div>
+
+                <!-- Radio Button -->
+                <fieldset>
+                    <legend>Jenis Peserta *</legend>
+
+                    <div class="option">
+                        <input type="radio" id="reguler" name="jenis_peserta" value="reguler" required>
+                        <label for="reguler">Mahasiswa Reguler</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" id="karyawan" name="jenis_peserta" value="karyawan">
+                        <label for="karyawan">Mahasiswa Karyawan</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="radio" id="umum" name="jenis_peserta" value="umum">
+                        <label for="umum">Peserta Umum</label>
+                    </div>
+                </fieldset>
+
+                <!-- Checkbox -->
+                <fieldset>
+                    <legend>Topik yang Diminati</legend>
+                    <p class="instruction">Anda boleh memilih lebih dari satu.</p>
+
+                    <div class="option">
+                        <input type="checkbox" id="web" name="minat[]" value="web">
+                        <label for="web">Web Development</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="checkbox" id="uiux" name="minat[]" value="uiux">
+                        <label for="uiux">UI/UX Design</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="checkbox" id="ai" name="minat[]" value="ai">
+                        <label for="ai">Artificial Intelligence</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="checkbox" id="data" name="minat[]" value="data">
+                        <label for="data">Data Science</label>
+                    </div>
+
+                    <div class="option">
+                        <input type="checkbox" id="cyber" name="minat[]" value="cyber">
+                        <label for="cyber">Cyber Security</label>
+                    </div>
+                </fieldset>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label for="alasan">Alasan Mengikuti Kegiatan *</label>
+                    <textarea
+                        id="alasan"
+                        name="alasan"
+                        rows="5"
+                        minlength="20"
+                        maxlength="300"
+                        placeholder="Jelaskan alasan Anda mengikuti kegiatan ini..."
+                        required></textarea>
+                    <small>Tuliskan antara 20-300 karakter.</small>
+                </div>
+
+                <!-- Upload KTM -->
+                <div class="form-group">
+                    <label for="ktm">Upload KTM / Kartu Identitas *</label>
+                    <input
+                        type="file"
+                        id="ktm"
+                        name="ktm"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required>
+                    <small>Format yang disarankan: PDF, JPG, atau PNG. Ukuran maksimum ditentukan oleh server.</small>
+                </div>
+
+                <!-- Upload Surat Pengantar -->
+                <div class="form-group">
+                    <label for="surat">Upload Surat Pengantar</label>
+                    <input
+                        type="file"
+                        id="surat"
+                        name="surat"
+                        accept=".pdf">
+                    <small>Opsional. Format PDF.</small>
+                </div>
+
+                <!-- Persetujuan -->
+                <div class="agreement">
+                    <input type="checkbox" id="persetujuan" name="persetujuan" value="setuju" required>
+                    <label for="persetujuan">Saya menyatakan data yang diisi sudah benar. *</label>
+                </div>
+
+                <!-- Tombol -->
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+
+</body>
+</html>

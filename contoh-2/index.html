@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Lamaran Magang</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="form-card">
+            <header class="form-header">
+                <span class="label-top">PROGRAM MAGANG</span>
+                <h1>Form Lamaran Magang</h1>
+                <p>Isi data yang diperlukan dan unggah CV dalam format PDF.</p>
+                <p class="required-info">* Wajib diisi</p>
+            </header>
+
+            <!-- enctype multipart/form-data dibutuhkan untuk pengiriman file -->
+            <form action="/proses-lamaran" method="post"
+                  enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap *</label>
+                    <input type="text" id="nama" name="nama"
+                           minlength="3" maxlength="60"
+                           placeholder="Contoh: Saipul Bahri" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="saipul@email.com" required>
+                    <small>Gunakan alamat email yang masih aktif.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="telepon">Nomor Telepon *</label>
+                    <input type="text" id="telepon" name="telepon"
+                           pattern="[0-9]{10,13}" minlength="10" maxlength="13"
+                           placeholder="Contoh: 081234567890" required>
+                    <small>Masukkan 10-13 digit angka tanpa spasi.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="posisi">Posisi Magang *</label>
+                    <select id="posisi" name="posisi" required>
+                        <option value="">-- Pilih Posisi --</option>
+                        <option value="frontend">Front-End Developer</option>
+                        <option value="backend">Back-End Developer</option>
+                        <option value="uiux">UI/UX Designer</option>
+                        <option value="data">Data Analyst</option>
+                    </select>
+                </div>
+
+                <fieldset>
+                    <legend>Sistem Kerja yang Dipilih *</legend>
+                    <div class="option">
+                        <input type="radio" id="onsite" name="sistem_kerja"
+                               value="onsite" required>
+                        <label for="onsite">On-site</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="hybrid" name="sistem_kerja"
+                               value="hybrid">
+                        <label for="hybrid">Hybrid</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="remote" name="sistem_kerja"
+                               value="remote">
+                        <label for="remote">Remote</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Kemampuan yang Dimiliki</legend>
+                    <p class="instruction">Pilih kemampuan yang sesuai.</p>
+
+                    <div class="option">
+                        <input type="checkbox" id="html" name="keahlian[]" value="html">
+                        <label for="html">HTML</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="css" name="keahlian[]" value="css">
+                        <label for="css">CSS</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="javascript"
+                               name="keahlian[]" value="javascript">
+                        <label for="javascript">JavaScript</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="figma" name="keahlian[]" value="figma">
+                        <label for="figma">Figma</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="motivasi">Motivasi Mengikuti Magang *</label>
+                    <textarea id="motivasi" name="motivasi" rows="6"
+                              minlength="50" maxlength="500"
+                              placeholder="Jelaskan alasan dan tujuan Anda mengikuti program magang..."
+                              required></textarea>
+                    <small>Tuliskan antara 50-500 karakter.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="cv">Upload CV *</label>
+                    <input type="file" id="cv" name="cv"
+                           accept=".pdf,application/pdf" required>
+                    <small>
+                        Format yang disarankan: PDF.
+                        Maksimum ukuran file ditentukan oleh server.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="portofolio">Portofolio</label>
+                    <input type="file" id="portofolio" name="portofolio"
+                           accept=".pdf,.jpg,.jpeg,.png">
+                    <small>Opsional. Dapat berupa PDF atau gambar.</small>
+                </div>
+
+                <div class="agreement">
+                    <input type="checkbox" id="persetujuan" name="persetujuan"
+                           value="setuju" required>
+                    <label for="persetujuan">
+                        Saya menyetujui penggunaan data ini untuk proses seleksi magang. *
+                    </label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">
+                        Kirim Lamaran
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        Bersihkan Form
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,185 @@
+:root {
+    --primary: #24558a;
+    --primary-dark: #173b61;
+    --background: #f4f6f9;
+    --surface: #ffffff;
+    --text: #262c34;
+    --text-secondary: #657080;
+    --border: #d7dde5;
+    --radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 760px;
+    margin: 50px auto;
+}
+
+.form-card {
+    background-color: var(--surface);
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.label-top {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.form-header h1 {
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+.form-header p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(36, 85, 138, 0.20);
+    border-color: var(--primary);
+}
+
+small,
+.instruction {
+    display: block;
+    margin-top: 6px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+fieldset {
+    margin: 0 0 22px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+legend {
+    padding: 0 8px;
+    font-weight: bold;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 10px 0;
+}
+
+.option label {
+    font-weight: normal;
+}
+
+.agreement {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.agreement label {
+    font-weight: normal;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: #e9edf2;
+    color: var(--text);
+}
+
+.btn-neutral {
+    background-color: #f4f6f9;
+    color: var(--text);
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .form-card {
+        padding: 24px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

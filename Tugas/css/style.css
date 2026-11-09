@@ -1,0 +1,208 @@
+:root {
+    --primary: #31598c;
+    --primary-dark: #203f65;
+    --background: #f4f6f8;
+    --surface: #ffffff;
+    --text: #252c35;
+    --muted: #697585;
+    --border: #d9dfe6;
+    --danger: #c62828;
+    --radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 780px;
+    margin: 50px auto;
+}
+
+.form-card {
+    background-color: var(--surface);
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: block;
+    margin-bottom: 14px;
+    border-radius: 12px;
+}
+
+.label-top {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.form-header h1 {
+    margin: 8px 0 10px;
+    font-size: 30px;
+}
+
+.form-header p {
+    margin: 0 0 5px;
+    color: var(--muted);
+}
+
+.form-header .required-info {
+    color: var(--danger);
+    font-size: 13px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 15px;
+    background-color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(49, 89, 140, 0.20);
+    border-color: var(--primary);
+}
+
+/* Umpan balik visual setelah pengguna berinteraksi dengan field */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--danger);
+    background-color: #fff6f6;
+}
+
+input:user-valid:not([type="file"]),
+select:user-valid,
+textarea:user-valid {
+    border-color: #2e7d32;
+}
+
+small,
+.instruction {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+fieldset {
+    margin: 0 0 22px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+legend {
+    padding: 0 8px;
+    font-weight: bold;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 10px 0;
+}
+
+.option label {
+    font-weight: normal;
+}
+
+.agreement {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #f7f9fc;
+    border-radius: var(--radius);
+}
+
+.agreement label {
+    font-weight: normal;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: #e7ebf0;
+    color: var(--text);
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .form-card {
+        padding: 24px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

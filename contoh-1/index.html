@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pencarian Mahasiswa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="form-card">
+            <header class="form-header">
+                <h1>Pencarian Data Mahasiswa</h1>
+                <p class="description">
+                    Gunakan form berikut untuk mencari data mahasiswa
+                    berdasarkan nama, NIM, angkatan, atau tanggal masuk.
+                </p>
+            </header>
+
+            <!-- Method GET digunakan karena form ini untuk pencarian data -->
+            <form action="hasil-pencarian.html" method="get">
+                <div class="form-group">
+                    <label for="nama">Nama Mahasiswa</label>
+                    <input type="text" id="nama" name="nama"
+                           placeholder="Masukkan nama mahasiswa">
+                </div>
+
+                <div class="form-group">
+                    <label for="nim">NIM</label>
+                    <input type="text" id="nim" name="nim"
+                           placeholder="Contoh: 20260001">
+                </div>
+
+                <div class="form-group">
+                    <label for="angkatan">Tahun Angkatan</label>
+                    <input type="number" id="angkatan" name="angkatan"
+                           min="2020" max="2030" placeholder="2026">
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggal">Tanggal Masuk</label>
+                    <input type="date" id="tanggal" name="tanggal">
+                </div>
+
+                <div class="form-group">
+                    <label for="program-studi">Program Studi *</label>
+                    <select id="program-studi" name="program_studi" required>
+                        <option value="">-- Pilih Program Studi --</option>
+                        <option value="informatika">Teknik Informatika</option>
+                        <option value="mesin">Teknik Mesin</option>
+                        <option value="elektro">Teknik Elektro</option>
+                        <option value="sipil">Teknik Sipil</option>
+                    </select>
+                </div>
+
+                <fieldset>
+                    <legend>Jenis Peserta *</legend>
+                    <div class="option">
+                        <input type="radio" id="reguler" name="jenis_peserta"
+                               value="reguler" required>
+                        <label for="reguler">Mahasiswa Reguler</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="karyawan" name="jenis_peserta"
+                               value="karyawan">
+                        <label for="karyawan">Mahasiswa Karyawan</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="umum" name="jenis_peserta"
+                               value="umum">
+                        <label for="umum">Peserta Umum</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Topik yang Diminati</legend>
+                    <p class="instruction">Anda boleh memilih lebih dari satu.</p>
+
+                    <div class="option">
+                        <input type="checkbox" id="web" name="minat[]" value="web">
+                        <label for="web">Web Development</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="ai" name="minat[]" value="ai">
+                        <label for="ai">Artificial Intelligence</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="data" name="minat[]" value="data">
+                        <label for="data">Data Science</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="cyber" name="minat[]" value="cyber">
+                        <label for="cyber">Cyber Security</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="alasan">Alasan Mengikuti Kegiatan *</label>
+                    <textarea id="alasan" name="alasan" rows="5"
+                              minlength="20" maxlength="300"
+                              placeholder="Jelaskan alasan Anda mengikuti kegiatan ini..."
+                              required></textarea>
+                    <small>Tuliskan antara 20–300 karakter.</small>
+                </div>
+
+                <div class="agreement">
+                    <input type="checkbox" id="persetujuan" name="persetujuan"
+                           value="setuju" required>
+                    <label for="persetujuan">
+                        Saya menyatakan data yang diisi sudah benar. *
+                    </label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">
+                        Kirim Pendaftaran
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        Reset
+                    </button>
+                    <button type="button" class="btn btn-neutral">
+                        Bantuan
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
