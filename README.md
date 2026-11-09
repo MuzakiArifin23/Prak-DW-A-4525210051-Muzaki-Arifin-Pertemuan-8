@@ -536,15 +536,15 @@ legend {
 
 ### Desktop (1280 px)
 
-![Form kosong desktop](dokumentasi/01_form-kosong-desktop.png)
+![Form kosong desktop](Tugas/dokumentasi/01_form-kosong-desktop.png)
 
-![Input salah desktop](dokumentasi/02_input-salah-desktop.png)
+![Input salah desktop](Tugas/dokumentasi/02_input-salah-desktop.png)
 
 ### Mobile (390 px)
 
-![Form kosong mobile](dokumentasi/01_form-kosong-mobile.png)
+![Form kosong mobile](Tugas/dokumentasi/01_form-kosong-mobile.png)
 
-![Input salah mobile](dokumentasi/02_input-salah-mobile.png)
+![Input salah mobile](Tugas/dokumentasi/02_input-salah-mobile.png)
 
 ## Test Case Validasi
 
